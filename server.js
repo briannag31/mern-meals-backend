@@ -67,7 +67,9 @@ app.delete("/meals/:id", async (req, res) => {
   })
 
   app.get("/meals/:id", async (req,res)=>{
-    Meal.findById(req.params.id)
+    Meal.findById(req.params.id, (error, foundMeal) => {
+      res.render(foundMeal)
+  })
 })
 
 
