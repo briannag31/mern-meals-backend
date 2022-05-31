@@ -66,7 +66,9 @@ app.delete("/meals/:id", async (req, res) => {
     }
   })
 
-
+  app.get("/meals/:id", async (req,res)=>{
+    Meal.findById(req.params.id)
+})
 
 
 app.listen(PORT, ()=> console.log(`listening on ${PORT}`))
