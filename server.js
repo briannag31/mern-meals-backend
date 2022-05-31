@@ -56,7 +56,7 @@ app.delete("/meals/:id", async (req, res) => {
     }
   })
   
-  app.put("/meals/:id", async (req, res) => {
+  app.put("/meals/:id/edit", async (req, res) => {
     try {
       res.json(
         await Meal.findByIdAndUpdate(req.params.id, req.body, { new: true })
