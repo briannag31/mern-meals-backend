@@ -40,7 +40,7 @@ app.get("/meals", async (req,res)=>{
     }
 })
 
-app.post("/meals/new", async (req, res) => {
+app.post("/meals", async (req, res) => {
     try {
       res.json(await Meal.create(req.body))
     } catch (error) {
@@ -56,7 +56,7 @@ app.delete("/meals/:id", async (req, res) => {
     }
   })
   
-  app.put("/meals/:id/edit", async (req, res) => {
+  app.put("/meals/:id", async (req, res) => {
     try {
       res.json(
         await Meal.findByIdAndUpdate(req.params.id, req.body, { new: true })
