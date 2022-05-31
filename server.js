@@ -40,6 +40,14 @@ app.get("/meals", async (req,res)=>{
     }
 })
 
+app.get("/meals/new", async (req,res)=>{
+  try{
+     res.send("new")
+  } catch (error) {
+      res.status(400).json(error)
+  }
+})
+
 app.post("/meals", async (req, res) => {
     try {
       res.json(await Meal.create(req.body))
