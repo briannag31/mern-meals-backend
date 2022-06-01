@@ -48,6 +48,14 @@ app.get("/meals/new", async (req,res)=>{
   }
 })
 
+app.get("/meals/recipes", async (req,res)=>{
+  try{
+     res.send("recipes")
+  } catch (error) {
+      res.status(400).json(error)
+  }
+})
+
 app.post("/meals", async (req, res) => {
     try {
       res.json(await Meal.create(req.body))
